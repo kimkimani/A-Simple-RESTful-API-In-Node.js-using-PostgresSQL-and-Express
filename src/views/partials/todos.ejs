@@ -1,0 +1,31 @@
+<ul class="list-group">
+    <% for(let i = 0; i < todos.length; i++) { %>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= todos[i].title %>
+            
+            <div class="list-group-item-actions">                             
+                
+                <div class="form-check">
+                <input
+                type="checkbox"
+                class="form-check-input"
+                onclick="updateTodo(<%= todos[i].id %>)"
+                <%= todos[i].checked ? "checked" : "" %>
+                />
+                </div>
+
+                <button 
+                class="delete-todo-form-btn"  
+                onclick="deleteTodo(<%= todos[i].id %>)"
+                >
+                    <i class="far fa-trash-alt"></i>
+                </button>
+
+            </div>
+
+            
+        </li>                        
+
+    <% } %>
+</ul>
